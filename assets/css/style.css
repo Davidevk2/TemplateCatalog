@@ -1,6 +1,9 @@
 body {
     background-color: #ebebeb;
     font-family: sans-serif;
+    box-sizing: content-box;
+
+    top: 0;
   }
 
   .grid-container {
@@ -18,7 +21,15 @@ body {
     padding: 10px;
     max-height: 600px;
     font-size: smaller;
+    transition: height .25s cubic-bezier(.4,0,.2,1), box-shadow .25s cubic-bezier(.4,0,.2,1);
   }
+
+  .card:hover{
+    box-shadow: 0 2px 8px #7e7e7e33;
+  }
+  /* .card:hover .card-body-buttons{
+    display: flex;
+  } */
 
   .card img {
     width: 250px;
@@ -54,6 +65,7 @@ body {
       height: 25px;
       padding: 6px;
       background-color:#bbbbbb;
+      /* background-color: #d4d4d4; */
       border-radius: 8px;
 
   }
@@ -63,4 +75,46 @@ body {
     height: 100%;
     object-position: center;
     object-fit: contain;
+  }
+
+  
+  .main-wrapper{
+    background-color: white;
+    padding: 18px;
+    border-radius: 8px;
+    width: 70%;
+    margin: auto auto;
+  }
+
+  .form-group{
+    display: block;
+    width: 100%;
+  }
+
+  .row{
+    display: flex
+;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .form-group label{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .form-control, .form-select{
+    display: block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #9D9C9C;
+    resize: none;
+    width: auto;
+    flex: 1 1 auto;
+    font-size:16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* font-family: var(--wp--preset--font-family--red-hat-display), sans-serif; */
   }
