@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API con Vue Js</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+  
+    <div id="app">
+      <div class="" v-if="errorMessage">
+        <p>Se registro un error al traer los datos: {{ errorMessage }}</p>
+      </div>
+      <h3>Lista de elementos</h3>
+      <div class="grid-container">
+        <div v-for="item in items">
+          <div class="card item">
+            <img :src="item.image" alt="" />
+            <div class="card-header">
+              <h4>{{ item.name }}</h4>
+            </div>
+            <div class="card-body">
+              <p>Status: {{ item.status }}</p>
+              <p>Specie: {{ item.species }}</p>
+              <p>Origin: {{ item.origin.name }}</p>
+              <div class="card-body-buttons">
+                <a href="https://dominio.com/product/share/573233423539" target="_blank" rel="noopener" class="btn btn-share">
+                  <img src="./assets/imgs/share-icon.png" class="icon share-icon" alt="">
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=573233423539" target="_blank" rel="noopener" class="btn btn-whatsapp">
+                  <img src="./assets/imgs/whatsapp-Icon.png" class="icon whatsapp-icon" alt="">
+                </a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="" v-if="items.length === 0">
+        <p>No hay elementos</p>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@2"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
